@@ -23,7 +23,9 @@ namespace CardGame
             {
                 Image slice = _sliceSpots[i];
                 slice.transform.localScale = _content.Slices[i].Drop.gameObject.transform.localScale;
-                slice.sprite = _content.Slices[i].Drop.gameObject.GetComponent<Image>().sprite;
+                Image contentSlice = _content.Slices[i].Drop.gameObject.GetComponent<Image>();
+                slice.sprite = contentSlice.sprite;
+                slice.rectTransform.sizeDelta = new Vector2(contentSlice.sprite.rect.width, contentSlice.sprite.rect.height);
             }
         }
 
