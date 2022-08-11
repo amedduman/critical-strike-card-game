@@ -1,14 +1,29 @@
 namespace CardGame
 {
-    using System.Collections.Generic;
+    using System;
     using UnityEngine;
-    
-    [CreateAssetMenu(fileName = "WheelContent", menuName = "CardGame/WheelContent")]
+    using Sirenix.OdinInspector;
+    using DG.Tweening;
+
+    [CreateAssetMenu(fileName = "wheel_content", menuName = "CardGame/WheelContent")]
     public class WheelContent : ScriptableObject
     {
-        [SerializeField] GameObject[] _drops;
-        [SerializeField] GameObject _drop;
-        [SerializeField] int _dropCount = 1;
-        [SerializeField] [Range(0, 1)] float _dropRate = 0.125f;
+        [InfoBox("Don't try to resize array", InfoMessageType.Warning, nameof(_isArraySizeWrong))]
+        public WheelContentData[] Slices = new WheelContentData[GameValues.WheelSliceCount];
+
+        bool _isArraySizeWrong = false;
+
+        void OnValidate()
+        {
+            if (Slices.Length != GameValues.WheelSliceCount)
+            {
+                _isArraySizeWrong = true;
+                Array.Resize(ref Slices, GameValues.WheelSliceCount);
+            }
+            else
+            {
+                _isArraySizeWrong = false;
+            }
+        }
     }
 }
