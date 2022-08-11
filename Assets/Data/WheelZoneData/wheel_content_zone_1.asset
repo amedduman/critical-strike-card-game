@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Slices:
   - Drop: {fileID: 6464490474133738103, guid: 1ad7fdc425d734c2fbbcc13b8907b25a, type: 3}
-    DropCount: 1
+    DropCount: 2
     DropRate: 0
   - Drop: {fileID: 3269527013100082393, guid: d3532a7217a8448ce8a3a69d541e37bd, type: 3}
     DropCount: 1

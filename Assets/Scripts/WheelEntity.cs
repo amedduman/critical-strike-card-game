@@ -3,12 +3,13 @@ namespace CardGame
     using System;
     using UnityEngine;
     using UnityEngine.UI;
+    using TMPro;
     using DG.Tweening;
 
     public class WheelEntity : MonoBehaviour
     {
         [SerializeField] WheelContent _content;
-        [SerializeField] Image[] _sliceSpots = new Image[GameValues.WheelSliceCount];
+        [SerializeField] GameObject[] _sliceSpots = new GameObject[GameValues.WheelSliceCount];
         [SerializeField] float _rotSpeed = 450;
         int _degree;
 
@@ -21,11 +22,16 @@ namespace CardGame
         {
             for (int i = 0; i < _content.Slices.Length; i++)
             {
-                Image slice = _sliceSpots[i];
-                slice.transform.localScale = _content.Slices[i].Drop.gameObject.transform.localScale;
-                Image contentSlice = _content.Slices[i].Drop.gameObject.GetComponent<Image>();
-                slice.sprite = contentSlice.sprite;
-                slice.rectTransform.sizeDelta = new Vector2(contentSlice.sprite.rect.width, contentSlice.sprite.rect.height);
+                Image sliceImage = _sliceSpots[i].GetComponentInChildren<Image>();
+                TextMeshProUGUI sliceCountText = _sliceSpots[i].GetComponentInChildren<TextMeshProUGUI>();
+
+                Image contentSliceImage = _content.Slices[i].Drop.gameObject.GetComponent<Image>();
+
+                sliceImage.transform.localScale = _content.Slices[i].Drop.gameObject.transform.localScale;
+                sliceImage.sprite = contentSliceImage.sprite;
+                sliceImage.rectTransform.sizeDelta = new Vector2(contentSliceImage.sprite.rect.width, contentSliceImage.sprite.rect.height);
+
+                sliceCountText.text = $"x{_content.Slices[i].DropCount.ToString()}";
             }
         }
 
