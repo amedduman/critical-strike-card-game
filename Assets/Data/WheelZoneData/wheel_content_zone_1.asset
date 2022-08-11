@@ -14,26 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Slices:
   - Drop: {fileID: 6464490474133738103, guid: 1ad7fdc425d734c2fbbcc13b8907b25a, type: 3}
-    _dropCount: 1
-    _dropRate: 0.125
+    DropCount: 1
+    DropRate: 0
   - Drop: {fileID: 3269527013100082393, guid: d3532a7217a8448ce8a3a69d541e37bd, type: 3}
-    _dropCount: 1
-    _dropRate: 0.125
+    DropCount: 1
+    DropRate: 0.087
   - Drop: {fileID: 8477412415571628607, guid: 851bc9c15dde7484e8f78417399c574f, type: 3}
-    _dropCount: 1
-    _dropRate: 0.125
+    DropCount: 1
+    DropRate: 0.096
   - Drop: {fileID: 6957014363878884803, guid: c87b67a55818a41cca8cb0446002b1be, type: 3}
-    _dropCount: 1
-    _dropRate: 0.125
+    DropCount: 1
+    DropRate: 0.11
   - Drop: {fileID: 6694771788854931681, guid: 7a51341e800ee442d949136783baf8e6, type: 3}
-    _dropCount: 1
-    _dropRate: 0.125
+    DropCount: 1
+    DropRate: 0.176
   - Drop: {fileID: 4159667342820414286, guid: 2b06814f5f25f495e92ca5d767ac168d, type: 3}
-    _dropCount: 1
-    _dropRate: 0.125
+    DropCount: 1
+    DropRate: 0.152
   - Drop: {fileID: 5082872671522146782, guid: 4dbf204530ab549008e948bfeff1925c, type: 3}
-    _dropCount: 1
-    _dropRate: 0.125
+    DropCount: 1
+    DropRate: 1
   - Drop: {fileID: 6464490474133738103, guid: 1ad7fdc425d734c2fbbcc13b8907b25a, type: 3}
-    _dropCount: 1
-    _dropRate: 0.125
+    DropCount: 1
+    DropRate: 0

@@ -33,14 +33,51 @@ namespace CardGame
         {
             _degree = 360 / GameValues.WheelSliceCount;
             int fullRotAmount = UnityEngine.Random.Range(1, 5);
-            int rotDegree = _degree * UnityEngine.Random.Range(1, GameValues.WheelSliceCount);
+            // int randomSliceIndex = UnityEngine.Random.Range(1, GameValues.WheelSliceCount);
+            int randomSliceIndex = GetIndex();
+            int rotDegree = _degree * randomSliceIndex; 
 
-            transform.DORotate(new Vector3(0, 0, -1 * ((360 * fullRotAmount) + rotDegree)), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased();
+            Debug.Log($"{randomSliceIndex}");
+            Debug.Log($"{_content.Slices[randomSliceIndex].Drop.gameObject.GetComponent<Image>().sprite}");
+
+            // transform.DORotate(new Vector3(0, 0, -1 * ((360 * fullRotAmount) + rotDegree)), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased();
+            transform.DORotate(new Vector3(0, 0, rotDegree), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased().OnComplete(ResetWheel);
+        }
+
+        void ResetWheel()
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        int GetIndex()
+        {
+            float total = 0;
+
+            for (int i = 0; i < _content.Slices.Length; i++)
+            {
+                total += _content.Slices[i].DropRate;
+            }
+
+            float randomPoint = UnityEngine.Random.value * total;
+
+            for (int j = 0; j < _content.Slices.Length; j++)
+            {
+                if (randomPoint < _content.Slices[j].DropRate)
+                {
+                    return j;
+                }
+                else
+                {
+                    randomPoint -= _content.Slices[j].DropRate;
+                }
+            }
+
+            return _content.Slices.Length - 1;
         }
 
         void OnValidate()
         {
-            if(_sliceSpots.Length != GameValues.WheelSliceCount)
+            if (_sliceSpots.Length != GameValues.WheelSliceCount)
             {
                 Array.Resize(ref _sliceSpots, GameValues.WheelSliceCount);
             }

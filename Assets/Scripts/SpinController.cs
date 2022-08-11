@@ -2,6 +2,7 @@ namespace CardGame
 {
     using UnityEngine;
     using UnityEngine.UI;
+    using DG.Tweening;
 
     public class SpinController : MonoBehaviour
     {
@@ -31,6 +32,7 @@ namespace CardGame
 
         void SpinButtonAction()
         {
+            if(DOTween.IsTweening(_spinEntity.transform)) return;
             _spinEntity.Spin();
         }
     }

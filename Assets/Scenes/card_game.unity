@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 408a4e980abc24d338d2eca0b89fba02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e9d87bd420d64e79857fcd7bd2f47bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -298,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &218170361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   - {fileID: 1762081574}
   - {fileID: 1715479755}
   - {fileID: 880561321}
-  _rotSpeed: 350
+  _rotSpeed: 50
 --- !u!1 &279565839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1509,10 @@ PrefabInstance:
     - target: {fileID: 3269527013100082393, guid: d3532a7217a8448ce8a3a69d541e37bd, type: 3}
       propertyPath: m_Name
       value: ui_image_slice_variant_glasses
+      objectReference: {fileID: 0}
+    - target: {fileID: 3269527013100082393, guid: d3532a7217a8448ce8a3a69d541e37bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272101975394898261, guid: d3532a7217a8448ce8a3a69d541e37bd, type: 3}
       propertyPath: m_Pivot.x

@@ -12,8 +12,8 @@ namespace CardGame
     {
         [ValueDropdown(nameof(GetAllDropPrefabs), IsUniqueList = true)]
         public GameObject Drop;
-        [SerializeField] int _dropCount = 1;
-        [SerializeField][Range(0, 1)] float _dropRate = 0.125f;
+        public int DropCount = 1;
+        [Range(0, 1)] public float DropRate = 1;
 
         private static IEnumerable GetAllDropPrefabs()
         {
