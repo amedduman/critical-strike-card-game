@@ -6,7 +6,7 @@ namespace CardGame
     public class SpinController : MonoBehaviour
     {
         [SerializeField] Button _spinButton;
-        [SerializeField] SpinEntity _spinEntity;
+        [SerializeField] WheelEntity _spinEntity;
 
         void OnValidate()
         {
