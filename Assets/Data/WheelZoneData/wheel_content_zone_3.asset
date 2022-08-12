@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 650c7180bf5da4ea2b4ca44439d435ca, type: 3}
-  m_Name: wheel_content_zone_1
+  m_Name: wheel_content_zone_3
   m_EditorClassIdentifier: 
   _gameValues: {fileID: 11400000, guid: 170afa84383ae4b74a7046c7701ebe3c, type: 2}
   Slices:
