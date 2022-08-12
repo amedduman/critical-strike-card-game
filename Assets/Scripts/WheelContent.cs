@@ -3,8 +3,6 @@ namespace CardGame
     using System;
     using UnityEngine;
     using UnityEngine.UI;
-    using Sirenix.OdinInspector;
-    using DG.Tweening;
 
     [CreateAssetMenu(fileName = "wheel_content", menuName = "CardGame/WheelContent")]
     public class WheelContent : ScriptableObject
@@ -13,7 +11,7 @@ namespace CardGame
 
         void OnValidate()
         {
-            if (Slices.Length != GameValues.WheelSliceCount)
+            if (Slices.Length != GameValues.WheelSliceCount) 
             {
                 Array.Resize(ref Slices, GameValues.WheelSliceCount);
             }
@@ -21,9 +19,12 @@ namespace CardGame
             for(int i = 0; i < Slices.Length; i++)  
             {
                 if(Slices[i].Drop == null) return;
+
                 Sprite dropSprite = Slices[i].Drop.GetComponent<Image>().sprite;
+
                 if(dropSprite == null) return;
-                if(dropSprite == GameValues.DeathSprite)
+
+                if(dropSprite.name == GameValues.DeathSprite.name)  
                 {
                     Slices[i].IsDeath = true;
                 }

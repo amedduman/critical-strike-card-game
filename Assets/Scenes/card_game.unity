@@ -510,14 +510,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _content: {fileID: 11400000, guid: 44ba568ba467041519074bc9f45474ee, type: 2}
   _sliceSpots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 218170360}
+  - {fileID: 757575982}
+  - {fileID: 1977658688}
+  - {fileID: 1665508211}
+  - {fileID: 2048475306}
+  - {fileID: 1613047744}
+  - {fileID: 1070092558}
+  - {fileID: 1333320302}
   _rotSpeed: 50
 --- !u!1001 &260176400
 PrefabInstance:

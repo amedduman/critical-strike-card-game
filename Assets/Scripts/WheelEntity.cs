@@ -47,7 +47,16 @@ namespace CardGame
             Debug.Log($"{_content.Slices[randomSliceIndex].Drop.gameObject.GetComponent<Image>().sprite}");
 
             // transform.DORotate(new Vector3(0, 0, -1 * ((360 * fullRotAmount) + rotDegree)), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased();
-            transform.DORotate(new Vector3(0, 0, rotDegree), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased().OnComplete(ResetWheel);
+            transform.DORotate(new Vector3(0, 0, rotDegree), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased().OnComplete( ()=> {SpinResult(randomSliceIndex);});
+        }
+
+        void SpinResult(int sliceIndex)
+        {
+            if(_content.Slices[sliceIndex].IsDeath)
+            {
+                Debug.Log($"game over");
+            }
+            ResetWheel();
         }
 
         void ResetWheel()

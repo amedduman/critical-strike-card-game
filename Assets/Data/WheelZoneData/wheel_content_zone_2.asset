@@ -10,38 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 650c7180bf5da4ea2b4ca44439d435ca, type: 3}
-  m_Name: wheel_content_zone_1
+  m_Name: wheel_content_zone_2
   m_EditorClassIdentifier: 
   Slices:
-  - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
-    DropCount: 1
-    DropRate: 1
-    IsDeath: 1
-  - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
-    DropCount: 1
-    DropRate: 1
-    IsDeath: 1
-  - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
-    DropCount: 1
-    DropRate: 1
-    IsDeath: 1
-  - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
-    DropCount: 1
-    DropRate: 1
-    IsDeath: 1
-  - Drop: {fileID: 6464490474133738103, guid: 1ad7fdc425d734c2fbbcc13b8907b25a, type: 3}
-    DropCount: 1
-    DropRate: 1
-    IsDeath: 0
-  - Drop: {fileID: 6464490474133738103, guid: 1ad7fdc425d734c2fbbcc13b8907b25a, type: 3}
-    DropCount: 1
-    DropRate: 0
-    IsDeath: 0
   - Drop: {fileID: 8477412415571628607, guid: 851bc9c15dde7484e8f78417399c574f, type: 3}
     DropCount: 1
-    DropRate: 0
+    DropRate: 1
     IsDeath: 0
-  - Drop: {fileID: 6694771788854931681, guid: 7a51341e800ee442d949136783baf8e6, type: 3}
+  - Drop: {fileID: 3269527013100082393, guid: d3532a7217a8448ce8a3a69d541e37bd, type: 3}
     DropCount: 1
-    DropRate: 0
+    DropRate: 1
+    IsDeath: 0
+  - Drop: {fileID: 3269527013100082393, guid: d3532a7217a8448ce8a3a69d541e37bd, type: 3}
+    DropCount: 1
+    DropRate: 1
+    IsDeath: 0
+  - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
+    DropCount: 1
+    DropRate: 1
+    IsDeath: 1
+  - Drop: {fileID: 0}
+    DropCount: 1
+    DropRate: 1
+    IsDeath: 0
+  - Drop: {fileID: 0}
+    DropCount: 1
+    DropRate: 1
+    IsDeath: 0
+  - Drop: {fileID: 0}
+    DropCount: 1
+    DropRate: 1
+    IsDeath: 0
+  - Drop: {fileID: 0}
+    DropCount: 1
+    DropRate: 1
     IsDeath: 0

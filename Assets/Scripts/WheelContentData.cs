@@ -12,9 +12,9 @@ namespace CardGame
     {
         [ValueDropdown(nameof(GetAllDropPrefabs), IsUniqueList = true)]
         public GameObject Drop;
-        public int DropCount = 1;
+        [Range(0, 25)] public int DropCount = 1;
         [Range(0, 1)] public float DropRate = 1;
-        [ReadOnly] public bool IsDeath;
+        [ReadOnly] [SerializeField] public bool IsDeath;
 
         private static IEnumerable GetAllDropPrefabs()
         {
