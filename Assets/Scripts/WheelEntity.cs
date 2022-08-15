@@ -8,10 +8,13 @@ namespace CardGame
 
     public class WheelEntity : MonoBehaviour
     {
-        [SerializeField] WheelContent _content;
+        [SerializeField] GameObject _gameOverPanel;
+        [SerializeField] WheelContent[] _contents;
         [SerializeField] GameObject[] _sliceSpots = new GameObject[GameValues.WheelSliceCount];
         [SerializeField] float _rotSpeed = 450;
         int _degree;
+        int _contentIndex; 
+        bool _isSpinning;
 
         void Start()
         {
@@ -20,74 +23,83 @@ namespace CardGame
 
         void GenerateWheelContent()
         {
-            for (int i = 0; i < _content.Slices.Length; i++)
+            WheelContent content = _contents[_contentIndex];
+            for (int i = 0; i < content.Slices.Length; i++)
             {
                 Image sliceImage = _sliceSpots[i].GetComponentInChildren<Image>();
                 TextMeshProUGUI sliceCountText = _sliceSpots[i].GetComponentInChildren<TextMeshProUGUI>();
 
-                Image contentSliceImage = _content.Slices[i].Drop.gameObject.GetComponent<Image>();
+                Image contentSliceImage = content.Slices[i].Drop.gameObject.GetComponent<Image>();
 
-                sliceImage.transform.localScale = _content.Slices[i].Drop.gameObject.transform.localScale;
+                sliceImage.transform.localScale = content.Slices[i].Drop.gameObject.transform.localScale;
                 sliceImage.sprite = contentSliceImage.sprite;
                 sliceImage.rectTransform.sizeDelta = new Vector2(contentSliceImage.sprite.rect.width, contentSliceImage.sprite.rect.height);
 
-                sliceCountText.text = $"x{_content.Slices[i].DropCount.ToString()}";
+                sliceCountText.text = $"x{content.Slices[i].DropCount.ToString()}";
             }
         }
 
         public void Spin()
         {
+            if(_isSpinning) return;
+            _isSpinning = true;
             _degree = 360 / GameValues.WheelSliceCount;
-            int fullRotAmount = UnityEngine.Random.Range(1, 5);
-            // int randomSliceIndex = UnityEngine.Random.Range(1, GameValues.WheelSliceCount);
+            int fullRotAmount = UnityEngine.Random.Range(3, 5);
             int randomSliceIndex = GetIndex();
             int rotDegree = _degree * randomSliceIndex; 
+            
+            Debug.Log($"{_contents[_contentIndex].Slices[randomSliceIndex].Drop.gameObject.GetComponent<Image>().sprite}");
 
-            Debug.Log($"{randomSliceIndex}");
-            Debug.Log($"{_content.Slices[randomSliceIndex].Drop.gameObject.GetComponent<Image>().sprite}");
-
-            // transform.DORotate(new Vector3(0, 0, -1 * ((360 * fullRotAmount) + rotDegree)), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased();
-            transform.DORotate(new Vector3(0, 0, rotDegree), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased().OnComplete( ()=> {SpinResult(randomSliceIndex);});
+            transform.DORotate(new Vector3(0, 0, rotDegree - 360 * fullRotAmount), _rotSpeed, RotateMode.LocalAxisAdd).SetSpeedBased()
+            .OnComplete( ()=> {SpinResult(randomSliceIndex);});
         }
 
         void SpinResult(int sliceIndex)
         {
-            if(_content.Slices[sliceIndex].IsDeath)
+            if(_contents[_contentIndex].Slices[sliceIndex].IsDeath)
             {
-                Debug.Log($"game over");
+                DOVirtual.DelayedCall(1, ()=> _gameOverPanel.SetActive(true));
             }
-            ResetWheel();
+            DOVirtual.DelayedCall(1, ResetWheel);
         }
 
         void ResetWheel()
         {
+            _contentIndex++;
+            if(_contentIndex >= _contents.Length)
+            {
+                _contentIndex = 0;
+            }
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            GenerateWheelContent();
+            _isSpinning = false;
         }
 
         int GetIndex()
         {
             float total = 0;
+            WheelContent content = _contents[_contentIndex];
 
-            for (int i = 0; i < _content.Slices.Length; i++)
+            for (int i = 0; i < content.Slices.Length; i++)
             {
-                total += _content.Slices[i].DropRate;
+                total += content.Slices[i].DropRate;
             }
 
             float randomPoint = UnityEngine.Random.value * total;
 
-            for (int j = 0; j < _content.Slices.Length; j++)
+            for (int j = 0; j < content.Slices.Length; j++)
             {
-                if (randomPoint < _content.Slices[j].DropRate)
+                if (randomPoint < content.Slices[j].DropRate)
                 {
                     return j;
                 }
                 else
                 {
-                    randomPoint -= _content.Slices[j].DropRate;
+                    randomPoint -= content.Slices[j].DropRate;
                 }
             }
 
-            return _content.Slices.Length - 1;
+            return content.Slices.Length - 1;
         }
 
         void OnValidate()

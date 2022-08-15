@@ -30,19 +30,19 @@ MonoBehaviour:
     DropCount: 1
     DropRate: 1
     IsDeath: 1
-  - Drop: {fileID: 0}
+  - Drop: {fileID: 6694771788854931681, guid: 7a51341e800ee442d949136783baf8e6, type: 3}
     DropCount: 1
     DropRate: 1
     IsDeath: 0
-  - Drop: {fileID: 0}
+  - Drop: {fileID: 6957014363878884803, guid: c87b67a55818a41cca8cb0446002b1be, type: 3}
     DropCount: 1
     DropRate: 1
     IsDeath: 0
-  - Drop: {fileID: 0}
+  - Drop: {fileID: 4159667342820414286, guid: 2b06814f5f25f495e92ca5d767ac168d, type: 3}
     DropCount: 1
     DropRate: 1
     IsDeath: 0
-  - Drop: {fileID: 0}
+  - Drop: {fileID: 5082872671522146782, guid: 4dbf204530ab549008e948bfeff1925c, type: 3}
     DropCount: 1
     DropRate: 1
     IsDeath: 0

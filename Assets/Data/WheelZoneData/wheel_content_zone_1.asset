@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameValues: {fileID: 11400000, guid: 170afa84383ae4b74a7046c7701ebe3c, type: 2}
   Slices:
+  - Drop: {fileID: 3269527013100082393, guid: d3532a7217a8448ce8a3a69d541e37bd, type: 3}
+    DropCount: 1
+    DropRate: 1
+    IsDeath: 0
   - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
     DropCount: 1
     DropRate: 1
     IsDeath: 1
-  - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
+  - Drop: {fileID: 6464490474133738103, guid: 1ad7fdc425d734c2fbbcc13b8907b25a, type: 3}
     DropCount: 1
     DropRate: 1
-    IsDeath: 1
-  - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
+    IsDeath: 0
+  - Drop: {fileID: 6694771788854931681, guid: 7a51341e800ee442d949136783baf8e6, type: 3}
     DropCount: 1
     DropRate: 1
-    IsDeath: 1
-  - Drop: {fileID: 4161402145526957984, guid: a8494d3d30e3c43e490b076e8d9c8b35, type: 3}
-    DropCount: 1
-    DropRate: 1
-    IsDeath: 1
+    IsDeath: 0
   - Drop: {fileID: 6464490474133738103, guid: 1ad7fdc425d734c2fbbcc13b8907b25a, type: 3}
     DropCount: 1
     DropRate: 1
